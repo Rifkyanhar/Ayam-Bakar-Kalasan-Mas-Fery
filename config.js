@@ -1,53 +1,41 @@
 // =========================================================
-// CONFIG.JS — Meja Pintar (Sistem Pesan Menu Resto QR)
+// CONFIG.JS — Kalasan Mas Fery (sudah terisi, siap pakai)
 // =========================================================
-// Diisi ULANG setiap ada pelanggan resto baru. File index.html TIDAK
-// perlu diedit lagi — cukup ganti isi file config.js ini sebelum
-// deploy ke folder/repo resto yang baru.
-// =========================================================
-
 window.RESTO_CONFIG = {
 
-  // ===== 1. Identitas resto =====
   RESTO: {
-    name: "Nama Resto",
-    lat: 0.000000,          // ambil dari Google Maps (klik kanan lokasi > koordinat)
-    lng: 0.000000,
-    wa: "628xxxxxxxxxx",    // nomor WA resto (tanpa spasi/simbol)
-    addr: "Alamat lengkap resto"
+    name: "Ayam Bakar & Goreng Kalasan Mas Fery",
+    lat: -6.1820389,
+    lng: 106.6344833,
+    wa: "085773144582",
+    addr: "Jl. Soleh Ali No. 3 Kavling Pasar Anyar"
   },
 
-  // ===== 2. Firebase (Realtime Database + Auth khusus resto ini) =====
-  // Ambil dari Firebase Console > Project Settings > General > Your apps
   firebaseConfig: {
-    apiKey: "",
-    authDomain: "",
-    databaseURL: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: ""
+    apiKey: "AIzaSyBaizb6QqUyvGIdzNn10c40CjNTVLP3-Xo",
+    authDomain: "ayam-bakar-kalasan-mas-fery.firebaseapp.com",
+    databaseURL: "https://ayam-bakar-kalasan-mas-fery-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "ayam-bakar-kalasan-mas-fery",
+    storageBucket: "ayam-bakar-kalasan-mas-fery.firebasestorage.app",
+    messagingSenderId: "259635639789",
+    appId: "1:259635639789:web:74a06a46083f146bf863e4"
   },
 
-  // Akun staff — dibuat manual di Firebase Console > Authentication > Users
-  // (email tidak perlu inbox asli, cuma perlu formatnya benar)
-  DAPUR_EMAIL: "dapur@namaresto.app",
-  KASIR_EMAIL: "kasir@namaresto.app",
+  DAPUR_EMAIL: "dapur@kalasanmasfery.app",
+  KASIR_EMAIL: "kasir@kalasanmasfery.app",
 
-  // ===== 3. Nilai default (resto bisa ganti sendiri lewat Panel Kasir > Pengaturan) =====
-  DEFAULT_GOOGLE_REVIEW_LINK: "https://maps.app.goo.gl/ISI_LINK_REVIEW",
+  DEFAULT_GOOGLE_REVIEW_LINK: "https://maps.app.goo.gl/XXyNHnfwyzSV33SV8",
   DEFAULT_PAYMENT_INFO: {
-    bank1Name: "BCA", bank1Number: "",
-    bank2Name: "BNI", bank2Number: "",
-    bankHolder: "",
-    ewalletNumber: "", ewalletHolder: ""
+    bank1Name: "BCA", bank1Number: "4090708835",
+    bank2Name: "BNI", bank2Number: "2052343385",
+    bankHolder: "MOCHAMMAD RIFKI ANHAR",
+    ewalletNumber: "0852-9007-8889", ewalletHolder: "MOCHAMMAD RIFKI ANHAR"
   },
   DEFAULT_GEOFENCE_TOLERANCE_M: 10,
   DEFAULT_TABLE_COUNT: 30,
   MAX_TABLE_COUNT: 30,
   MAX_MENU_ITEMS: 30,
 
-  // ===== 4. NAFA Tech — Langganan (JANGAN diubah, sama untuk semua resto) =====
   NAFA_SUPABASE_URL: "https://uuejlrebqanlkgguerhk.supabase.co",
   NAFA_SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV1ZWpscmVicWFubGtnZ3VlcmhrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUxNDI3MTIsImV4cCI6MjEwMDcxODcxMn0.CnlC0xknSICXYv1hxCEcqwsSYP8N6QVXHm_Z_xsKluY",
   NAFA_PRODUCT_KEY: "menu-resto-qr",
@@ -55,10 +43,9 @@ window.RESTO_CONFIG = {
   NAFA_OWNER_EMAIL: "nafatechid@gmail.com",
   NAFA_SUBSCRIPTION_DAYS: 30,
 
-  // ⚠️ PALING PENTING — WAJIB DIISI DENGAN BENAR:
-  // Isi PERSIS SAMA dengan nomor WA/email yang diketik pelanggan waktu
-  // mendaftar & bayar lewat langganan.html. Kalau beda walau satu karakter,
-  // status "sudah bayar" TIDAK akan kebaca oleh web app resto ini, dan
-  // banner "langganan belum aktif" akan terus muncul meski sudah bayar.
-  NAFA_CUSTOMER_ID: "ISI_SAMA_PERSIS_DENGAN_KONTAK_DI_FORM_LANGGANAN"
+  // ⚠️ GANTI INI: isi dengan kontak (WA/email) persis yang dipakai Mas Fery
+  // waktu langganan/bayar produk ini. Cek di Supabase Table Editor, tabel
+  // product_subscriptions, kolom customer_contact, baris product_key =
+  // 'menu-resto-qr' milik Mas Fery — salin nilainya persis ke sini.
+  NAFA_CUSTOMER_ID: "085773144582"
 };
